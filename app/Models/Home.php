@@ -9,6 +9,8 @@ class Home extends Model
 {
     use HasFactory;
 
+    protected $table = 'home';
+        
     protected $fillable = [
         'intro_id',
         'intro_en',
