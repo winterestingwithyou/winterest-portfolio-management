@@ -34,7 +34,7 @@ new class extends Component
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
-                        {{ __('Home') }}
+                        {{ __('Home Management') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -88,7 +88,7 @@ new class extends Component
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
-                {{ __('Home') }}
+                {{ __('Home Management') }}
             </x-responsive-nav-link>
         </div>
 
