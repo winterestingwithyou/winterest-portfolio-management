@@ -14,6 +14,9 @@ new class extends Component {
         $this->myself_en = $home->myself_en;
     }
 
+    /**
+     * Handle update intro request
+     */
     public function update()
     {
          $validated = $this->validate([

@@ -2,7 +2,6 @@
 
 use Livewire\Volt\Component;
 use App\Models\Home;
-use App\Http\Requests\UpdateHomeIntroRequest;
 
 new class extends Component {
     public string $intro_id;
