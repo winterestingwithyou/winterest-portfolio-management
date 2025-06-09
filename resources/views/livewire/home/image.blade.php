@@ -96,7 +96,7 @@ new class extends Component {
         </div>
     @endif
     <form wire:submit="update" class="h-full">
-        <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-xl h-full shadow-md">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl h-full shadow-md">
             <h2 class="text-xl font-bold text-gray-900 mb-5 dark:text-white">Gambar</h2>
             
             <div class="aspect-[9/10] bg-gray-200 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center mb-5">

@@ -63,7 +63,7 @@ new class extends Component {
         </div>
     @endif
     <form wire:submit="update">
-        <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-xl shadow-md">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
             <h2 class="text-xl font-bold text-gray-900 mb-5 dark:text-white">Myself</h2>
         
             <div class="mb-5">
