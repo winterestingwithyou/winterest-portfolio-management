@@ -14,11 +14,11 @@ new class extends Component {
     }
 
     /**
-     * Handle update image request
+     * Validate rules for image url
      */
-    public function update(): void
+    public function rules(): array
     {
-        $validated = $this->validate([
+        return [
             'image' => [
                 'required', 'string', 'url',
                 function ($attribute, $value, $fail) {
@@ -35,7 +35,15 @@ new class extends Component {
                     }
                 },
             ],
-        ]);
+        ];
+    }
+
+    /**
+     * Handle update image request
+     */
+    public function update(): void
+    {
+        $validated = $this->validate();
 
         $home = Home::first();
 
@@ -45,6 +53,23 @@ new class extends Component {
         } else {
             session()->flash('error', 'Data tidak dapat diperbarui');
         }
+    }
+
+    /**
+     * Reset Image value to default with database value
+     */
+    public function resetImage(): void
+    {
+        $home = Home::first();
+        $this->image = $home->image; 
+    }
+
+    /**
+     * load preview image from input
+     */
+    public function loadPreview(): void
+    {
+        $this->validate();        
     }
 }; ?>
 
@@ -91,6 +116,18 @@ new class extends Component {
             </div>
         
             <div class="flex justify-end">
+                <button type="button" wire:click="resetImage" class="flex items-center px-3 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                        class="w-5 h-5" viewBox="0 0 24 24" 
+                        fill="none" stroke="currentColor" 
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="1 4 1 10 7 10"></polyline>
+                        <path d="M3.51 15a9 9 0 1 0 .49-5.5L1 10"></path>
+                    </svg>
+                </button>
+                <x-secondary-button wire:click="loadPreview" class="ms-4">
+                    {{ __('Preview') }}
+                </x-secondary-button>
                 <x-primary-button class="ms-4">
                     {{ __('Save') }}
                 </x-primary-button>
