@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('intro_en');
             $table->text('myself_id');
             $table->text('myself_en');
-            $table->text('image')->nullable();
+            $table->string('image')->default('');
         });
     }
 
