@@ -6,6 +6,7 @@ export default {
     presets: [
         require("./vendor/wireui/wireui/tailwind.config.js")
     ],
+    darkMode: 'media',
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
